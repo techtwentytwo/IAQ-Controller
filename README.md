@@ -8,15 +8,25 @@ Controller uses inputs from humidistats, occupancy sensors, IAQ sensors & manual
 Products used in overall IAQ system:
 
 https://www.santa-fe-products.com/product/ultra205-dehumidifier/ (I used the Ultra-Aire SD12, which is discontinued)
-https://www.supplyhouse.com/Fantech-ATMO150E-ATMO-Series-Fresh-Air-Appliance-Energy-Recovery-Ventilator-6-Side-Ports-161-CFM (similar to my Clean Comfort ERV from Daikin)
+
+https://www.supplyhouse.com/Fantech-ATMO150E-ATMO-Series-Fresh-Air-Appliance-Energy-Recovery-Ventilator-6-Side-Ports-161-CFM
+    (similar to my Clean Comfort ERV from Daikin)
+    
 https://www.amazon.com/gp/product/B07TD42S27/?th=1
+
 https://sequentmicrosystems.com/products/sixteen-relays-8-layer-stackable-hat-for-raspberry-pi
+
 https://sequentmicrosystems.com/products/16-universal-inputs-card-for-raspberry-pi
+
 https://www.trutechtools.com/haven-iaq-central-air-monitor.html
+
 https://www.supplyhouse.com/Honeywell-Home-H6062A1000-HumidiPRO-Digital-Humidistat-Dehumidistat-Humidity-Control (one in each exhaust zone, one in main living area)
 https://www.amazon.com/gp/product/B0B4MVHRK5?th=1 one in each toilet area
+
 https://www.supplyhouse.com/Aprilaire-6508-8-Round-Ventilation-Damper-Normally-Closed-Power-Open (one in ERV supply connecting to dehum return, balanced to maintain same static pressure on supply side of ERV supply fan as when it's supplying the duct system)
+
 https://www.supplyhouse.com/Honeywell-Home-ARD8TZ-8-Round-Automatic-TrueZONE-Damper for ERV supply to duct system
+
 https://www.supplyhouse.com/Honeywell-Home-ARD10TZ-10-Round-Automatic-TrueZONE-Damper for dehum supply to duct
 
 ERV removes exhaust from up to 8 zones. Each zone has sensors such as humidistats and/or occupancy sensors, and has a zone damper integrated into the terminal. The zone damper includes the CAR3 airflow regulating damper, which provides for a small volume of air to be exhausted when the zone is not calling for exhaust and the main damper is closed, but the ERV is running on demand for ventilation or for exhuasting another zone or zones. If a zone calls for exhaust, the ERV starts, and the main damper in the ZRT opens. The terminal ceases to regulate/restrict air volume exhausted from that zone. The ERV will continue to run and the zone damper will stay open for 5 minutes after the sensor opens. 
