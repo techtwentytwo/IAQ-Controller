@@ -1,0 +1,4029 @@
+[
+    {
+        "id": "dddc648e84081f1d",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "cb50cfc6800b1e46",
+        "type": "inject",
+        "z": "dddc648e84081f1d",
+        "name": "Exhaust Zone 1",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "1",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 130,
+        "y": 20,
+        "wires": [
+            [
+                "f767c9922db64b69"
+            ]
+        ]
+    },
+    {
+        "id": "f767c9922db64b69",
+        "type": "16inpind",
+        "z": "dddc648e84081f1d",
+        "name": "Exhaust_Demand_1",
+        "stack": "1",
+        "channel": "1",
+        "x": 320,
+        "y": 20,
+        "wires": [
+            [
+                "614d0912765c8eb9"
+            ]
+        ]
+    },
+    {
+        "id": "614d0912765c8eb9",
+        "type": "function",
+        "z": "dddc648e84081f1d",
+        "name": "If On",
+        "func": "if (msg.payload == 1) {\n    return { payload: true };\n} else {\n    return { payload: false };\n}",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 470,
+        "y": 20,
+        "wires": [
+            [
+                "cf3ab2bcd0c644b4"
+            ]
+        ]
+    },
+    {
+        "id": "092572b5bf34442b",
+        "type": "16relind",
+        "z": "dddc648e84081f1d",
+        "name": "ZRT2-1",
+        "stack": "0",
+        "relay": "1",
+        "payload": "payload",
+        "payloadType": "msg",
+        "x": 880,
+        "y": 20,
+        "wires": [
+            [
+                "24c7ba116bb289e4"
+            ]
+        ]
+    },
+    {
+        "id": "de6a2f695c7d4166",
+        "type": "inject",
+        "z": "dddc648e84081f1d",
+        "name": "Exhaust Zone 2",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "1",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 130,
+        "y": 80,
+        "wires": [
+            [
+                "2cfccbd78e5b2587"
+            ]
+        ]
+    },
+    {
+        "id": "2cfccbd78e5b2587",
+        "type": "16inpind",
+        "z": "dddc648e84081f1d",
+        "name": "Exhaust_Demand_2",
+        "stack": "1",
+        "channel": "2",
+        "x": 320,
+        "y": 80,
+        "wires": [
+            [
+                "1acfe9b01f84f7c8"
+            ]
+        ]
+    },
+    {
+        "id": "1acfe9b01f84f7c8",
+        "type": "function",
+        "z": "dddc648e84081f1d",
+        "name": "If On",
+        "func": "if (msg.payload == 1) {\n    return { payload: true };\n} else {\n    return { payload: false };\n}",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 470,
+        "y": 80,
+        "wires": [
+            [
+                "37f57fef72a272ac"
+            ]
+        ]
+    },
+    {
+        "id": "fba1dcd2b9069930",
+        "type": "16relind",
+        "z": "dddc648e84081f1d",
+        "name": "ZRT2-2",
+        "stack": "0",
+        "relay": "2",
+        "payload": "payload",
+        "payloadType": "msg",
+        "x": 880,
+        "y": 80,
+        "wires": [
+            [
+                "9fd0989be1ef386b"
+            ]
+        ]
+    },
+    {
+        "id": "ae06e4bdb658a326",
+        "type": "inject",
+        "z": "dddc648e84081f1d",
+        "name": "Exhaust Demand",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "2",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 130,
+        "y": 660,
+        "wires": [
+            [
+                "b70cb9c1fcefc5ab",
+                "bde2476fcb412969",
+                "cee0e7bcc435fbb2",
+                "da14c26e44a78cab",
+                "bdae7e81e148bcca",
+                "7fb4770195d39ae7",
+                "1ee6d8d3cd250ea2",
+                "8f35ae7d79828ae6"
+            ]
+        ]
+    },
+    {
+        "id": "0b8615487f343963",
+        "type": "16inpind",
+        "z": "dddc648e84081f1d",
+        "name": "DCV_Demand_1",
+        "stack": "1",
+        "channel": "10",
+        "x": 290,
+        "y": 1040,
+        "wires": [
+            [
+                "9b53873198e1f2e7"
+            ]
+        ]
+    },
+    {
+        "id": "8d4bebf55d4d6e92",
+        "type": "countdown",
+        "z": "dddc648e84081f1d",
+        "name": "",
+        "topic": "",
+        "payloadTimerStart": "true",
+        "payloadTimerStartType": "bool",
+        "payloadTimerStop": "false",
+        "payloadTimerStopType": "bool",
+        "timer": "300",
+        "resetWhileRunning": true,
+        "outputOnReset": false,
+        "setTimeToNewWhileRunning": true,
+        "startCountdownOnControlMessage": true,
+        "x": 750,
+        "y": 660,
+        "wires": [
+            [
+                "74a31451a3cddded"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "c11a09f5c534efd8",
+        "type": "switch",
+        "z": "dddc648e84081f1d",
+        "name": "",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "1",
+                "vt": "num"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 630,
+        "y": 660,
+        "wires": [
+            [
+                "8d4bebf55d4d6e92"
+            ]
+        ]
+    },
+    {
+        "id": "85b609dfb0914c0e",
+        "type": "countdown",
+        "z": "dddc648e84081f1d",
+        "name": "",
+        "topic": "",
+        "payloadTimerStart": "true",
+        "payloadTimerStartType": "bool",
+        "payloadTimerStop": "false",
+        "payloadTimerStopType": "bool",
+        "timer": "300",
+        "resetWhileRunning": true,
+        "outputOnReset": false,
+        "setTimeToNewWhileRunning": true,
+        "startCountdownOnControlMessage": true,
+        "x": 730,
+        "y": 20,
+        "wires": [
+            [
+                "092572b5bf34442b"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "cf3ab2bcd0c644b4",
+        "type": "switch",
+        "z": "dddc648e84081f1d",
+        "name": "Drop False",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "true"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 590,
+        "y": 20,
+        "wires": [
+            [
+                "85b609dfb0914c0e"
+            ]
+        ]
+    },
+    {
+        "id": "d4eeeaeda3d9572a",
+        "type": "countdown",
+        "z": "dddc648e84081f1d",
+        "name": "",
+        "topic": "",
+        "payloadTimerStart": "true",
+        "payloadTimerStartType": "bool",
+        "payloadTimerStop": "false",
+        "payloadTimerStopType": "bool",
+        "timer": "300",
+        "resetWhileRunning": true,
+        "outputOnReset": false,
+        "setTimeToNewWhileRunning": true,
+        "startCountdownOnControlMessage": true,
+        "x": 730,
+        "y": 80,
+        "wires": [
+            [
+                "fba1dcd2b9069930"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "37f57fef72a272ac",
+        "type": "switch",
+        "z": "dddc648e84081f1d",
+        "name": "Drop False",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "true"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 590,
+        "y": 80,
+        "wires": [
+            [
+                "d4eeeaeda3d9572a"
+            ]
+        ]
+    },
+    {
+        "id": "74a31451a3cddded",
+        "type": "function",
+        "z": "dddc648e84081f1d",
+        "name": "set ExhaustDemand",
+        "func": "var Payload = msg.payload;\nvar Exhaust = flow.get('ExhaustDemand');\n\n    if (Payload === true) {\n        Exhaust = true;\n        }\n    if (Payload === false) {\n        Exhaust = false;\n    }\n\nflow.set('ExhaustDemand', Exhaust)\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "// Code added here will be run once\n// whenever the node is started.\nflow.set('ExhaustDemand', false)",
+        "finalize": "",
+        "libs": [],
+        "x": 940,
+        "y": 660,
+        "wires": [
+            [
+                "ed228d0419d1b089",
+                "c38577af400f62fa"
+            ]
+        ]
+    },
+    {
+        "id": "21f82bc548cbdc0f",
+        "type": "inject",
+        "z": "dddc648e84081f1d",
+        "name": "ERV Relay ",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "1",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 110,
+        "y": 1640,
+        "wires": [
+            [
+                "b80c4d5eafa7f783"
+            ]
+        ]
+    },
+    {
+        "id": "b80c4d5eafa7f783",
+        "type": "function",
+        "z": "dddc648e84081f1d",
+        "name": "Exhaust, Vent Ctrl Variables",
+        "func": "var ExhaustDemand = flow.get('ExhaustDemand');\nvar DCVDemand = flow.get('DCVDemand');\nvar TimeVentDemand = flow.get('TimeVentDemand');\nvar VentOnTime = flow.get('VentOnTime');\n\nif (ExhaustDemand === true || DCVDemand === true || TimeVentDemand === true || VentOnTime === true ) {\n    msg.payload = true ;\n}\nif (ExhaustDemand === false && DCVDemand === false && TimeVentDemand === false && VentOnTime === false) {\n    msg.payload = false ;\n}\nreturn msg ;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "// Code added here will be run once\n// whenever the node is started.\nflow.set('exhaustdemand', false)",
+        "finalize": "// Code added here will be run when the\n// node is being stopped or re-deployed.\nflow.set('exhaustdemand', false)",
+        "libs": [],
+        "x": 300,
+        "y": 1640,
+        "wires": [
+            [
+                "062c64c0ed017ea9",
+                "2d9b3c6d2433c6fc"
+            ]
+        ]
+    },
+    {
+        "id": "9dacdbc06c7b6eae",
+        "type": "16relind",
+        "z": "dddc648e84081f1d",
+        "name": "ERV",
+        "stack": "0",
+        "relay": "11",
+        "payload": "payload",
+        "payloadType": "msg",
+        "x": 850,
+        "y": 1640,
+        "wires": [
+            [
+                "cdd11657db3a1e9f"
+            ]
+        ]
+    },
+    {
+        "id": "e725794970d82ef8",
+        "type": "function",
+        "z": "dddc648e84081f1d",
+        "name": "Lockout Variable",
+        "func": "var Lockout = flow.get('Lockout') ;\nvar Payload = msg.payload ;\n\nif (Payload === true) {\n\n    if (Lockout === true) {\n    msg.payload = false ;\n    }\n    else if (Lockout === false) {\n    msg.payload = true ;\n    }\n\n}\n\nreturn msg ;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 620,
+        "y": 1640,
+        "wires": [
+            [
+                "bd23f5ba4cd46d4d"
+            ]
+        ]
+    },
+    {
+        "id": "7c707f048624f1d9",
+        "type": "inject",
+        "z": "dddc648e84081f1d",
+        "name": "Dehum Demand",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": ".2",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 130,
+        "y": 1100,
+        "wires": [
+            [
+                "ccac3d1e76c8b416"
+            ]
+        ]
+    },
+    {
+        "id": "ccac3d1e76c8b416",
+        "type": "16inpind",
+        "z": "dddc648e84081f1d",
+        "name": "Dehum_Demand_1",
+        "stack": "1",
+        "channel": "11",
+        "x": 310,
+        "y": 1100,
+        "wires": [
+            [
+                "e9e208d84e2f63f5"
+            ]
+        ]
+    },
+    {
+        "id": "391782eb8a7546ec",
+        "type": "countdown",
+        "z": "dddc648e84081f1d",
+        "name": "",
+        "topic": "",
+        "payloadTimerStart": "true",
+        "payloadTimerStartType": "bool",
+        "payloadTimerStop": "false",
+        "payloadTimerStopType": "bool",
+        "timer": "30",
+        "resetWhileRunning": true,
+        "outputOnReset": false,
+        "setTimeToNewWhileRunning": true,
+        "startCountdownOnControlMessage": true,
+        "x": 570,
+        "y": 1100,
+        "wires": [
+            [
+                "900774323db7ec25"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "e9e208d84e2f63f5",
+        "type": "switch",
+        "z": "dddc648e84081f1d",
+        "name": "",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "1",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 450,
+        "y": 1100,
+        "wires": [
+            [
+                "391782eb8a7546ec"
+            ]
+        ]
+    },
+    {
+        "id": "900774323db7ec25",
+        "type": "function",
+        "z": "dddc648e84081f1d",
+        "name": "set DehumDemand",
+        "func": "var Payload = msg.payload;\nvar Dehum = flow.get('DehumDemand');\n\n    if (Payload === true) {\n        Dehum = true\n        }\n    if (Payload === false) {\n        Dehum = false;\n    }\n\nflow.set('DehumDemand', Dehum);\n\nreturn msg;",
+        "outputs": 2,
+        "noerr": 0,
+        "initialize": "// Code added here will be run once\n// whenever the node is started.\nflow.set('DehumDemand', false);",
+        "finalize": "",
+        "libs": [],
+        "x": 730,
+        "y": 1100,
+        "wires": [
+            [
+                "0698c2bd3c447161"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "846c11abb28ec616",
+        "type": "inject",
+        "z": "dddc648e84081f1d",
+        "name": "Dehum Control",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "1",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 120,
+        "y": 1580,
+        "wires": [
+            [
+                "223425e15ad2ba99"
+            ]
+        ]
+    },
+    {
+        "id": "223425e15ad2ba99",
+        "type": "function",
+        "z": "dddc648e84081f1d",
+        "name": "Dehum Control Variable",
+        "func": "var Dehum = flow.get('DehumDemand');\nif (Dehum === true) {\n    msg.payload = true;\n}\nif (Dehum === false) {\n    msg.payload = false;\n}\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "// Code added here will be run once\n// whenever the node is started.\nflow.set('dehumdemand', false)",
+        "finalize": "// Code added here will be run when the\n// node is being stopped or re-deployed.\nflow.set('dehumdemand', false)",
+        "libs": [],
+        "x": 310,
+        "y": 1580,
+        "wires": [
+            [
+                "499bd67d30ed4d2e"
+            ]
+        ]
+    },
+    {
+        "id": "ed074b52f9624492",
+        "type": "16relind",
+        "z": "dddc648e84081f1d",
+        "name": "Dehum",
+        "stack": "0",
+        "relay": "9",
+        "payload": "payload",
+        "payloadType": "msg",
+        "x": 860,
+        "y": 1580,
+        "wires": [
+            [
+                "6cfce2c122d8fe97"
+            ]
+        ]
+    },
+    {
+        "id": "fc0b560fb4321d2c",
+        "type": "function",
+        "z": "dddc648e84081f1d",
+        "name": "Lockout Variable",
+        "func": "var Lockout = flow.get('Lockout');\nvar Payload = msg.payload;\n\nif (Payload === true) {\n\n    if (Lockout === true) {\n        msg.payload = false;\n    }\n    else if (Lockout === false) {\n        msg.payload = true;\n    }\n\n}\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 620,
+        "y": 1580,
+        "wires": [
+            [
+                "164fad444769e343"
+            ]
+        ]
+    },
+    {
+        "id": "498ebfb5b557c080",
+        "type": "inject",
+        "z": "dddc648e84081f1d",
+        "name": "DCV Demand",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "1",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 120,
+        "y": 1040,
+        "wires": [
+            [
+                "0b8615487f343963"
+            ]
+        ]
+    },
+    {
+        "id": "f8cea035284b2086",
+        "type": "countdown",
+        "z": "dddc648e84081f1d",
+        "name": "",
+        "topic": "",
+        "payloadTimerStart": "true",
+        "payloadTimerStartType": "bool",
+        "payloadTimerStop": "false",
+        "payloadTimerStopType": "bool",
+        "timer": "30",
+        "resetWhileRunning": true,
+        "outputOnReset": false,
+        "setTimeToNewWhileRunning": true,
+        "startCountdownOnControlMessage": true,
+        "x": 550,
+        "y": 1040,
+        "wires": [
+            [
+                "b461772b5474046d"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "9b53873198e1f2e7",
+        "type": "switch",
+        "z": "dddc648e84081f1d",
+        "name": "",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "1",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 430,
+        "y": 1040,
+        "wires": [
+            [
+                "f8cea035284b2086"
+            ]
+        ]
+    },
+    {
+        "id": "b461772b5474046d",
+        "type": "function",
+        "z": "dddc648e84081f1d",
+        "name": "set DCVDemand",
+        "func": "var Payload = msg.payload;\nvar DCVDemand = flow.get('DCVDemand');\n\n    if (Payload === true) {\n        DCVDemand = true;\n    }\n    if (Payload === false) {\n        DCVDemand = false;\n    }\n\nflow.set('DCVDemand', DCVDemand);\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "// Code added here will be run once\n// whenever the node is started.\nflow.set('DCVDemand', false);",
+        "finalize": "",
+        "libs": [],
+        "x": 710,
+        "y": 1040,
+        "wires": [
+            [
+                "d9ad4499343632b1"
+            ]
+        ]
+    },
+    {
+        "id": "a5843f78f2ac7fc2",
+        "type": "inject",
+        "z": "dddc648e84081f1d",
+        "name": "Vent Relay",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "2",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 110,
+        "y": 1520,
+        "wires": [
+            [
+                "e03947ae734ee96d"
+            ]
+        ]
+    },
+    {
+        "id": "e03947ae734ee96d",
+        "type": "function",
+        "z": "dddc648e84081f1d",
+        "name": "Vent Control Variables",
+        "func": "var VentOnTime = flow.get('VentOnTime');\nvar DCVDemand = flow.get('DCVDemand');\nvar TimeVentDemand = flow.get('TimeVentDemand');\n\nif (DCVDemand === true || TimeVentDemand === true || VentOnTime === true) {\n    msg.payload = true;\n}\nif (DCVDemand === false || TimeVentDemand === false || VentOnTime === false) {\n    msg.payload = false;\n}\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "// Code added here will be run once\n// whenever the node is started.\nflow.set('ventdemand',false)",
+        "finalize": "// Code added here will be run when the\n// node is being stopped or re-deployed.\nflow.set('ventdemand', false)",
+        "libs": [],
+        "x": 280,
+        "y": 1520,
+        "wires": [
+            [
+                "c0128fcd7149e671"
+            ]
+        ]
+    },
+    {
+        "id": "0e29b19443b8371c",
+        "type": "16relind",
+        "z": "dddc648e84081f1d",
+        "name": "Vent",
+        "stack": "0",
+        "relay": "10",
+        "payload": "payload",
+        "payloadType": "msg",
+        "x": 810,
+        "y": 1520,
+        "wires": [
+            [
+                "8e411f582544cf97"
+            ]
+        ]
+    },
+    {
+        "id": "9733148d923a5d6d",
+        "type": "function",
+        "z": "dddc648e84081f1d",
+        "name": "Lockout Variable",
+        "func": "var Lockout = flow.get('Lockout');\nvar Payload = msg.payload;\n\nif (Payload === true) {\n\n    if (Lockout === true) {\n        msg.payload = false;\n    }\n    else if (Lockout === false) {\n        msg.payload = true;\n    }\n\n}\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 580,
+        "y": 1520,
+        "wires": [
+            [
+                "25370dafff67971a"
+            ]
+        ]
+    },
+    {
+        "id": "51084b747c480cdb",
+        "type": "inject",
+        "z": "dddc648e84081f1d",
+        "name": "Damper Sequence",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "1",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 140,
+        "y": 1860,
+        "wires": [
+            [
+                "100373770380530e"
+            ]
+        ]
+    },
+    {
+        "id": "100373770380530e",
+        "type": "function",
+        "z": "dddc648e84081f1d",
+        "name": "Set DamperConfig",
+        "func": "var ExhaustDemand = flow.get('ExhaustDemand');\nvar DCVDemand = flow.get('DCVdemand');\nvar TimeVentDemand = flow.get('TimeVentDemand');\nvar VentOnTime = flow.get('VentOnTime');\nvar Dehum = flow.get('DehumDemand');\nvar DamperConfig = flow.get('DamperConfig');\nvar Vent = false;\n\n//sets dampers up for ERV to run without Dehum. 12 = dehum\n// S/A damper, 13 = ERV S/A damper, 14 = ERV/Dehum mix damper\n\nif (DCVDemand === true || TimeVentDemand === true || VentOnTime === true) {\n    Vent = true\n}\n\nif (Dehum === false && (ExhaustDemand === true || Vent === true)) {\n    DamperConfig = 'ERV' ;\n    }\n//\"ERV\" config: 12-OFF 13-ON 14-OFF\n\n//sets dampers up for ERV to run with Dehum\nelse if (Dehum === true && (ExhaustDemand === true || Vent === true)) {\n    DamperConfig = 'ERV-Dehum' ;\n    }\n//\"ERV-Dehum\" config: 12-ON 13-OFF 14-ON\n\n//sets dampers up for Dehum\nelse if (ExhaustDemand === false && Vent === false && Dehum === true) {\n    DamperConfig = 'Dehum' ; \n}\n//\"Dehum\" config: 12-ON 13-OFF 14-OFF\n\nelse {\n    DamperConfig = 'Off' ;\n}\n//\"Off\" config: 12-OFF 13-OFF 14-OFF\n\nflow.set('DamperConfig', DamperConfig);\n\nmsg.payload = flow.get('DamperConfig');\n\nreturn msg;\n\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "// Code added here will be run once\n// whenever the node is started.\nflow.set('damperconfig','Off');",
+        "finalize": "",
+        "libs": [],
+        "x": 350,
+        "y": 1860,
+        "wires": [
+            [
+                "2684e7b3e50ce5e7",
+                "3a3753d259cd7b7f"
+            ]
+        ]
+    },
+    {
+        "id": "2684e7b3e50ce5e7",
+        "type": "function",
+        "z": "dddc648e84081f1d",
+        "name": "damper commands",
+        "func": "var msg0 = { payload: false };\nvar msg1 = { payload: true };\nvar msg2 = { payload: true };\nvar msg3 = { payload: true };\nvar msg4 = { payload: flow.get('DamperConfig') };\nvar DamperConfig = flow.get('DamperConfig');\n\nif (DamperConfig === 'ERV') {\n    return [msg0, msg2, msg0, msg4];\n}\nelse if (DamperConfig === 'ERV-Dehum') {\n    return [msg1, msg0, msg3, msg4];\n}\nelse if (DamperConfig === 'Dehum') {\n    return [msg1, msg0, msg0, msg4];\n}\nelse if (DamperConfig === 'Off') {\n    return [msg0, msg0, msg0, msg4];\n}",
+        "outputs": 4,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 550,
+        "y": 1860,
+        "wires": [
+            [
+                "1354c0af44ca4258",
+                "d3e8102fe6805112"
+            ],
+            [
+                "ef8f14becdefc4c2",
+                "0582fa66682c2e7f"
+            ],
+            [
+                "a06d768595492d9a",
+                "bab6deb8b8fe4783"
+            ],
+            [
+                "a2b1b875ad538336",
+                "1a467f869878f5d2"
+            ]
+        ]
+    },
+    {
+        "id": "4b137c61afa145b7",
+        "type": "debug",
+        "z": "dddc648e84081f1d",
+        "name": "ERV S/A Damper",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1430,
+        "y": 1880,
+        "wires": []
+    },
+    {
+        "id": "89ab310c5894d130",
+        "type": "debug",
+        "z": "dddc648e84081f1d",
+        "name": "ERV/Dehum Mix Damper",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1490,
+        "y": 1920,
+        "wires": []
+    },
+    {
+        "id": "81fec8261b694980",
+        "type": "countdown",
+        "z": "dddc648e84081f1d",
+        "name": "",
+        "topic": "",
+        "payloadTimerStart": "true",
+        "payloadTimerStartType": "bool",
+        "payloadTimerStop": "false",
+        "payloadTimerStopType": "bool",
+        "timer": "30",
+        "resetWhileRunning": true,
+        "outputOnReset": false,
+        "setTimeToNewWhileRunning": true,
+        "startCountdownOnControlMessage": true,
+        "x": 830,
+        "y": 2000,
+        "wires": [
+            [
+                "08e6cd1316591865"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "08e6cd1316591865",
+        "type": "function",
+        "z": "dddc648e84081f1d",
+        "name": "Lockout Variable",
+        "func": "//this lockout is to shut off blowers while dampers are changing positions.\n\nvar Payload = msg.payload;\nvar Lockout = flow.get('Lockout');\n\n    if (Payload === true) {\n        Lockout = true;\n        msg.payload = \"Lockout initiated while dampers reposition\" ;\n    }\n\n    if (Payload === false) {\n        Lockout = false;\n        msg.payload = \"Lockout terminated\" ;\n    }\n\nflow.set('Lockout', Lockout) ;\n\nreturn msg ;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1000,
+        "y": 2000,
+        "wires": [
+            [
+                "c78f6ad52d6bb5d7"
+            ]
+        ]
+    },
+    {
+        "id": "a2b1b875ad538336",
+        "type": "rbe",
+        "z": "dddc648e84081f1d",
+        "name": "",
+        "func": "rbe",
+        "gap": "",
+        "start": "",
+        "inout": "out",
+        "septopics": true,
+        "property": "payload",
+        "topi": "topic",
+        "x": 710,
+        "y": 2000,
+        "wires": [
+            [
+                "81fec8261b694980"
+            ]
+        ]
+    },
+    {
+        "id": "c78f6ad52d6bb5d7",
+        "type": "debug",
+        "z": "dddc648e84081f1d",
+        "name": "Lockout Variable",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1160,
+        "y": 2000,
+        "wires": []
+    },
+    {
+        "id": "d3e8102fe6805112",
+        "type": "delay",
+        "z": "dddc648e84081f1d",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "3",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 820,
+        "y": 1840,
+        "wires": [
+            [
+                "8365134333f098a8"
+            ]
+        ]
+    },
+    {
+        "id": "0582fa66682c2e7f",
+        "type": "delay",
+        "z": "dddc648e84081f1d",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "3",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 820,
+        "y": 1880,
+        "wires": [
+            [
+                "5640cc69904d7d1d"
+            ]
+        ]
+    },
+    {
+        "id": "bab6deb8b8fe4783",
+        "type": "delay",
+        "z": "dddc648e84081f1d",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "3",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 820,
+        "y": 1920,
+        "wires": [
+            [
+                "833e3f8979921175"
+            ]
+        ]
+    },
+    {
+        "id": "cdd11657db3a1e9f",
+        "type": "function",
+        "z": "dddc648e84081f1d",
+        "name": "Debug Messages",
+        "func": "var Payload = msg.payload ;\n\nif (Payload === true) {\n    msg.payload = \"ERV Relay On\" ;\n}\nelse {\n    msg.payload = \"ERV Relay Off\";\n}\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 990,
+        "y": 1640,
+        "wires": [
+            [
+                "e34c29c1bd9ccde2"
+            ]
+        ]
+    },
+    {
+        "id": "e34c29c1bd9ccde2",
+        "type": "debug",
+        "z": "dddc648e84081f1d",
+        "name": "ERV Relay",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1150,
+        "y": 1640,
+        "wires": []
+    },
+    {
+        "id": "5640cc69904d7d1d",
+        "type": "16relind",
+        "z": "dddc648e84081f1d",
+        "name": "ERV S/A Damper",
+        "stack": "0",
+        "relay": "13",
+        "payload": "payload",
+        "payloadType": "msg",
+        "x": 970,
+        "y": 1880,
+        "wires": [
+            [
+                "f46f813b4c706673"
+            ]
+        ]
+    },
+    {
+        "id": "0ba29a3394a1b5e0",
+        "type": "debug",
+        "z": "dddc648e84081f1d",
+        "name": "Dehum S/A Damper",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1460,
+        "y": 1840,
+        "wires": []
+    },
+    {
+        "id": "8365134333f098a8",
+        "type": "16relind",
+        "z": "dddc648e84081f1d",
+        "name": "Dehum S/A Damper",
+        "stack": "0",
+        "relay": "12",
+        "payload": "payload",
+        "payloadType": "msg",
+        "x": 980,
+        "y": 1840,
+        "wires": [
+            [
+                "f4eeedcae0fdfdad"
+            ]
+        ]
+    },
+    {
+        "id": "833e3f8979921175",
+        "type": "16relind",
+        "z": "dddc648e84081f1d",
+        "name": "ERV/Dehum Mix Damper",
+        "stack": "0",
+        "relay": "14",
+        "payload": "payload",
+        "payloadType": "msg",
+        "x": 990,
+        "y": 1920,
+        "wires": [
+            [
+                "e4d8d62d7175b76f"
+            ]
+        ]
+    },
+    {
+        "id": "97d411aec0fb2ae7",
+        "type": "function",
+        "z": "dddc648e84081f1d",
+        "name": "Debug Messages",
+        "func": "var payload = msg.payload;\n\nif (payload === true) {\n    msg.payload = \"Dehum S/A Damper Opening\";\n}\nelse {\n    msg.payload = \"Dehum S/A Damper Closing\";\n}\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1270,
+        "y": 1840,
+        "wires": [
+            [
+                "0ba29a3394a1b5e0"
+            ]
+        ]
+    },
+    {
+        "id": "46fda46cba84c28b",
+        "type": "function",
+        "z": "dddc648e84081f1d",
+        "name": "Debug Messages",
+        "func": "var payload = msg.payload;\n\nif (payload === true) {\n    msg.payload = \"ERV S/A Damper Opening\";\n}\nelse {\n    msg.payload = \"ERV S/A Damper Closing\";\n}\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1250,
+        "y": 1880,
+        "wires": [
+            [
+                "4b137c61afa145b7"
+            ]
+        ]
+    },
+    {
+        "id": "bf7398dfd7463856",
+        "type": "function",
+        "z": "dddc648e84081f1d",
+        "name": "Debug Messages",
+        "func": "var payload = msg.payload;\n\nif (payload === true) {\n    msg.payload = \"ERV/Dehum Mix Damper Opening\";\n}\nelse {\n    msg.payload = \"ERV/Dehum Mix Damper Closing\";\n}\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1290,
+        "y": 1920,
+        "wires": [
+            [
+                "89ab310c5894d130"
+            ]
+        ]
+    },
+    {
+        "id": "25370dafff67971a",
+        "type": "rbe",
+        "z": "dddc648e84081f1d",
+        "name": "",
+        "func": "rbe",
+        "gap": "",
+        "start": "",
+        "inout": "out",
+        "septopics": true,
+        "property": "payload",
+        "topi": "topic",
+        "x": 710,
+        "y": 1520,
+        "wires": [
+            [
+                "0e29b19443b8371c"
+            ]
+        ]
+    },
+    {
+        "id": "6cfce2c122d8fe97",
+        "type": "function",
+        "z": "dddc648e84081f1d",
+        "name": "Debug Messages",
+        "func": "var Payload = msg.payload;\n\nif (Payload === true) {\n    msg.payload = \"Dehum Relay On\";\n}\nelse {\n    msg.payload = \"Dehum Relay Off\";\n}\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1010,
+        "y": 1580,
+        "wires": [
+            [
+                "9aa0e1fabb8aa4d3"
+            ]
+        ]
+    },
+    {
+        "id": "164fad444769e343",
+        "type": "rbe",
+        "z": "dddc648e84081f1d",
+        "name": "",
+        "func": "rbe",
+        "gap": "",
+        "start": "",
+        "inout": "out",
+        "septopics": true,
+        "property": "payload",
+        "topi": "topic",
+        "x": 750,
+        "y": 1580,
+        "wires": [
+            [
+                "ed074b52f9624492"
+            ]
+        ]
+    },
+    {
+        "id": "9aa0e1fabb8aa4d3",
+        "type": "debug",
+        "z": "dddc648e84081f1d",
+        "name": "Dehum Relay",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1180,
+        "y": 1580,
+        "wires": []
+    },
+    {
+        "id": "bd23f5ba4cd46d4d",
+        "type": "rbe",
+        "z": "dddc648e84081f1d",
+        "name": "",
+        "func": "rbe",
+        "gap": "",
+        "start": "",
+        "inout": "out",
+        "septopics": true,
+        "property": "payload",
+        "topi": "topic",
+        "x": 750,
+        "y": 1640,
+        "wires": [
+            [
+                "9dacdbc06c7b6eae"
+            ]
+        ]
+    },
+    {
+        "id": "d8ce8725f6f0768e",
+        "type": "debug",
+        "z": "dddc648e84081f1d",
+        "name": "DCV Demand",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1160,
+        "y": 1040,
+        "wires": []
+    },
+    {
+        "id": "d9ad4499343632b1",
+        "type": "rbe",
+        "z": "dddc648e84081f1d",
+        "name": "",
+        "func": "rbe",
+        "gap": "",
+        "start": "",
+        "inout": "out",
+        "septopics": true,
+        "property": "payload",
+        "topi": "topic",
+        "x": 850,
+        "y": 1040,
+        "wires": [
+            [
+                "5ae32004ceadf4a7"
+            ]
+        ]
+    },
+    {
+        "id": "5ae32004ceadf4a7",
+        "type": "function",
+        "z": "dddc648e84081f1d",
+        "name": "Debug Messages",
+        "func": "var Payload = msg.payload;\n\nif (Payload === true) {\n    msg.payload =\"Ventilation Demand Initiated\";\n}\nelse {\n    msg.payload = \"Ventilation Demand Terminated\";\n}\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 990,
+        "y": 1040,
+        "wires": [
+            [
+                "d8ce8725f6f0768e"
+            ]
+        ]
+    },
+    {
+        "id": "f4ecae728f8e963d",
+        "type": "debug",
+        "z": "dddc648e84081f1d",
+        "name": "Exhaust Demand (To ERV)",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1540,
+        "y": 660,
+        "wires": []
+    },
+    {
+        "id": "ed228d0419d1b089",
+        "type": "rbe",
+        "z": "dddc648e84081f1d",
+        "name": "",
+        "func": "rbe",
+        "gap": "",
+        "start": "",
+        "inout": "out",
+        "septopics": true,
+        "property": "payload",
+        "topi": "topic",
+        "x": 1190,
+        "y": 660,
+        "wires": [
+            [
+                "36759b636c244104"
+            ]
+        ]
+    },
+    {
+        "id": "36759b636c244104",
+        "type": "function",
+        "z": "dddc648e84081f1d",
+        "name": "Debug Messages",
+        "func": "var Payload = msg.payload;\n\nif (Payload === true) {\n    msg.payload =\"Exhaust Demand Initiated\";\n}\nelse {\n    msg.payload = \"Exhaust Demand Terminated\";\n}\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1330,
+        "y": 660,
+        "wires": [
+            [
+                "f4ecae728f8e963d"
+            ]
+        ]
+    },
+    {
+        "id": "a5a714920e22a071",
+        "type": "debug",
+        "z": "dddc648e84081f1d",
+        "name": "ZRT_1 Damper",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1300,
+        "y": 20,
+        "wires": []
+    },
+    {
+        "id": "6f923dae8224c693",
+        "type": "function",
+        "z": "dddc648e84081f1d",
+        "name": "Debug Messages",
+        "func": "var payload = msg.payload;\n\nif (payload === true) {\n    msg.payload = \"Exhaust Zone 1 ZRT Damper Opening\";\n}\nelse {\n    msg.payload = \"Exhaust Zone 1 ZRT Damper Closing\";\n}\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1130,
+        "y": 20,
+        "wires": [
+            [
+                "a5a714920e22a071"
+            ]
+        ]
+    },
+    {
+        "id": "24c7ba116bb289e4",
+        "type": "rbe",
+        "z": "dddc648e84081f1d",
+        "name": "",
+        "func": "rbe",
+        "gap": "",
+        "start": "",
+        "inout": "out",
+        "septopics": true,
+        "property": "payload",
+        "topi": "topic",
+        "x": 990,
+        "y": 20,
+        "wires": [
+            [
+                "6f923dae8224c693"
+            ]
+        ]
+    },
+    {
+        "id": "8cec612f2b04fea3",
+        "type": "debug",
+        "z": "dddc648e84081f1d",
+        "name": "ZRT_2 Damper",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1300,
+        "y": 80,
+        "wires": []
+    },
+    {
+        "id": "fad22447fd29e745",
+        "type": "function",
+        "z": "dddc648e84081f1d",
+        "name": "Debug Messages",
+        "func": "var payload = msg.payload;\n\nif (payload === true) {\n    msg.payload = \"Exhaust Zone 2 ZRT Damper Opening\";\n}\nelse {\n    msg.payload = \"Exhaust Zone 2 ZRT Damper Closing\";\n}\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1130,
+        "y": 80,
+        "wires": [
+            [
+                "8cec612f2b04fea3"
+            ]
+        ]
+    },
+    {
+        "id": "9fd0989be1ef386b",
+        "type": "rbe",
+        "z": "dddc648e84081f1d",
+        "name": "",
+        "func": "rbe",
+        "gap": "",
+        "start": "",
+        "inout": "out",
+        "septopics": true,
+        "property": "payload",
+        "topi": "topic",
+        "x": 990,
+        "y": 80,
+        "wires": [
+            [
+                "fad22447fd29e745"
+            ]
+        ]
+    },
+    {
+        "id": "9718c84bcf31be73",
+        "type": "inject",
+        "z": "dddc648e84081f1d",
+        "name": "Exhaust Zone 3",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "1",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 130,
+        "y": 140,
+        "wires": [
+            [
+                "c542dae4b30b82be"
+            ]
+        ]
+    },
+    {
+        "id": "c542dae4b30b82be",
+        "type": "16inpind",
+        "z": "dddc648e84081f1d",
+        "name": "Exhaust_Demand_3",
+        "stack": "1",
+        "channel": "3",
+        "x": 320,
+        "y": 140,
+        "wires": [
+            [
+                "fb1443b20202f914"
+            ]
+        ]
+    },
+    {
+        "id": "fb1443b20202f914",
+        "type": "function",
+        "z": "dddc648e84081f1d",
+        "name": "If On",
+        "func": "if (msg.payload == 1) {\n    return { payload: true };\n} else {\n    return { payload: false };\n}",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 470,
+        "y": 140,
+        "wires": [
+            [
+                "262270a818b916d9"
+            ]
+        ]
+    },
+    {
+        "id": "d8ee44ab5f1cd744",
+        "type": "16relind",
+        "z": "dddc648e84081f1d",
+        "name": "ZRT2-3",
+        "stack": "0",
+        "relay": "3",
+        "payload": "payload",
+        "payloadType": "msg",
+        "x": 880,
+        "y": 140,
+        "wires": [
+            [
+                "4ee8520b2313e95a"
+            ]
+        ]
+    },
+    {
+        "id": "e1a21deef3a7750c",
+        "type": "countdown",
+        "z": "dddc648e84081f1d",
+        "name": "",
+        "topic": "",
+        "payloadTimerStart": "true",
+        "payloadTimerStartType": "bool",
+        "payloadTimerStop": "false",
+        "payloadTimerStopType": "bool",
+        "timer": "300",
+        "resetWhileRunning": true,
+        "outputOnReset": false,
+        "setTimeToNewWhileRunning": true,
+        "startCountdownOnControlMessage": true,
+        "x": 730,
+        "y": 140,
+        "wires": [
+            [
+                "d8ee44ab5f1cd744"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "262270a818b916d9",
+        "type": "switch",
+        "z": "dddc648e84081f1d",
+        "name": "Drop False",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "true"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 590,
+        "y": 140,
+        "wires": [
+            [
+                "e1a21deef3a7750c"
+            ]
+        ]
+    },
+    {
+        "id": "f3950f3226bad788",
+        "type": "debug",
+        "z": "dddc648e84081f1d",
+        "name": "ZRT_3 Damper",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1300,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "0b010d780d554463",
+        "type": "function",
+        "z": "dddc648e84081f1d",
+        "name": "Debug Messages",
+        "func": "var payload = msg.payload;\n\nif (payload === true) {\n    msg.payload = \"Exhaust Zone 3 ZRT Damper Opening\";\n}\nelse {\n    msg.payload = \"Exhaust Zone 3 ZRT Damper Closing\";\n}\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1130,
+        "y": 140,
+        "wires": [
+            [
+                "f3950f3226bad788"
+            ]
+        ]
+    },
+    {
+        "id": "4ee8520b2313e95a",
+        "type": "rbe",
+        "z": "dddc648e84081f1d",
+        "name": "",
+        "func": "rbe",
+        "gap": "",
+        "start": "",
+        "inout": "out",
+        "septopics": true,
+        "property": "payload",
+        "topi": "topic",
+        "x": 990,
+        "y": 140,
+        "wires": [
+            [
+                "0b010d780d554463"
+            ]
+        ]
+    },
+    {
+        "id": "733b2642c37eedfb",
+        "type": "inject",
+        "z": "dddc648e84081f1d",
+        "name": "Exhaust Zone 4",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "1",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 130,
+        "y": 200,
+        "wires": [
+            [
+                "a6fff387a8a55569"
+            ]
+        ]
+    },
+    {
+        "id": "a6fff387a8a55569",
+        "type": "16inpind",
+        "z": "dddc648e84081f1d",
+        "name": "Exhaust_Demand_4",
+        "stack": "1",
+        "channel": "4",
+        "x": 320,
+        "y": 200,
+        "wires": [
+            [
+                "e6ee1ba3fc7a3c58"
+            ]
+        ]
+    },
+    {
+        "id": "e6ee1ba3fc7a3c58",
+        "type": "function",
+        "z": "dddc648e84081f1d",
+        "name": "If On",
+        "func": "if (msg.payload == 1) {\n    return { payload: true };\n} else {\n    return { payload: false };\n}",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 470,
+        "y": 200,
+        "wires": [
+            [
+                "71e563836816b65a"
+            ]
+        ]
+    },
+    {
+        "id": "51957ed35113e7c8",
+        "type": "16relind",
+        "z": "dddc648e84081f1d",
+        "name": "ZRT2-4",
+        "stack": "0",
+        "relay": "4",
+        "payload": "payload",
+        "payloadType": "msg",
+        "x": 880,
+        "y": 200,
+        "wires": [
+            [
+                "3032c8091beb55b9"
+            ]
+        ]
+    },
+    {
+        "id": "d5b5e1f762c35376",
+        "type": "countdown",
+        "z": "dddc648e84081f1d",
+        "name": "",
+        "topic": "",
+        "payloadTimerStart": "true",
+        "payloadTimerStartType": "bool",
+        "payloadTimerStop": "false",
+        "payloadTimerStopType": "bool",
+        "timer": "300",
+        "resetWhileRunning": true,
+        "outputOnReset": false,
+        "setTimeToNewWhileRunning": true,
+        "startCountdownOnControlMessage": true,
+        "x": 730,
+        "y": 200,
+        "wires": [
+            [
+                "51957ed35113e7c8"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "71e563836816b65a",
+        "type": "switch",
+        "z": "dddc648e84081f1d",
+        "name": "Drop False",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "true"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 590,
+        "y": 200,
+        "wires": [
+            [
+                "d5b5e1f762c35376"
+            ]
+        ]
+    },
+    {
+        "id": "735cd23e37e3f21d",
+        "type": "debug",
+        "z": "dddc648e84081f1d",
+        "name": "ZRT_4 Damper",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1300,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "b25bf8396e6dba0f",
+        "type": "function",
+        "z": "dddc648e84081f1d",
+        "name": "Debug Messages",
+        "func": "var payload = msg.payload;\n\nif (payload === true) {\n    msg.payload = \"Exhaust Zone 4 ZRT Damper Opening\";\n}\nelse {\n    msg.payload = \"Exhaust Zone 4 ZRT Damper Closing\";\n}\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1130,
+        "y": 200,
+        "wires": [
+            [
+                "735cd23e37e3f21d"
+            ]
+        ]
+    },
+    {
+        "id": "3032c8091beb55b9",
+        "type": "rbe",
+        "z": "dddc648e84081f1d",
+        "name": "",
+        "func": "rbe",
+        "gap": "",
+        "start": "",
+        "inout": "out",
+        "septopics": true,
+        "property": "payload",
+        "topi": "topic",
+        "x": 990,
+        "y": 200,
+        "wires": [
+            [
+                "b25bf8396e6dba0f"
+            ]
+        ]
+    },
+    {
+        "id": "f86811330e6bec10",
+        "type": "inject",
+        "z": "dddc648e84081f1d",
+        "name": "Exhaust Zone 5",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "1",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 130,
+        "y": 260,
+        "wires": [
+            [
+                "bb0f05d0778fd347"
+            ]
+        ]
+    },
+    {
+        "id": "bb0f05d0778fd347",
+        "type": "16inpind",
+        "z": "dddc648e84081f1d",
+        "name": "Exhaust_Demand_5",
+        "stack": "1",
+        "channel": "5",
+        "x": 320,
+        "y": 260,
+        "wires": [
+            [
+                "64c5ae4b9ea920b0"
+            ]
+        ]
+    },
+    {
+        "id": "64c5ae4b9ea920b0",
+        "type": "function",
+        "z": "dddc648e84081f1d",
+        "name": "If On",
+        "func": "if (msg.payload == 1) {\n    return { payload: true };\n} else {\n    return { payload: false };\n}",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 470,
+        "y": 260,
+        "wires": [
+            [
+                "6e492cb8b7878a26"
+            ]
+        ]
+    },
+    {
+        "id": "6335409c0babfaf2",
+        "type": "16relind",
+        "z": "dddc648e84081f1d",
+        "name": "ZRT2-5",
+        "stack": "0",
+        "relay": "5",
+        "payload": "payload",
+        "payloadType": "msg",
+        "x": 880,
+        "y": 260,
+        "wires": [
+            [
+                "b1a817d726f48e56"
+            ]
+        ]
+    },
+    {
+        "id": "3d3c8c16fec35248",
+        "type": "countdown",
+        "z": "dddc648e84081f1d",
+        "name": "",
+        "topic": "",
+        "payloadTimerStart": "true",
+        "payloadTimerStartType": "bool",
+        "payloadTimerStop": "false",
+        "payloadTimerStopType": "bool",
+        "timer": "300",
+        "resetWhileRunning": true,
+        "outputOnReset": false,
+        "setTimeToNewWhileRunning": true,
+        "startCountdownOnControlMessage": true,
+        "x": 730,
+        "y": 260,
+        "wires": [
+            [
+                "6335409c0babfaf2"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "6e492cb8b7878a26",
+        "type": "switch",
+        "z": "dddc648e84081f1d",
+        "name": "Drop False",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "true"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 590,
+        "y": 260,
+        "wires": [
+            [
+                "3d3c8c16fec35248"
+            ]
+        ]
+    },
+    {
+        "id": "55f2cf2e6ccc1be3",
+        "type": "debug",
+        "z": "dddc648e84081f1d",
+        "name": "ZRT_5 Damper",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1300,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "1677c424d7a85ce2",
+        "type": "function",
+        "z": "dddc648e84081f1d",
+        "name": "Debug Messages",
+        "func": "var payload = msg.payload;\n\nif (payload === true) {\n    msg.payload = \"Exhaust Zone 5 ZRT Damper Opening\";\n}\nelse {\n    msg.payload = \"Exhaust Zone 5 ZRT Damper Closing\";\n}\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1130,
+        "y": 260,
+        "wires": [
+            [
+                "55f2cf2e6ccc1be3"
+            ]
+        ]
+    },
+    {
+        "id": "b1a817d726f48e56",
+        "type": "rbe",
+        "z": "dddc648e84081f1d",
+        "name": "",
+        "func": "rbe",
+        "gap": "",
+        "start": "",
+        "inout": "out",
+        "septopics": true,
+        "property": "payload",
+        "topi": "topic",
+        "x": 990,
+        "y": 260,
+        "wires": [
+            [
+                "1677c424d7a85ce2"
+            ]
+        ]
+    },
+    {
+        "id": "914c24d55a5c226b",
+        "type": "inject",
+        "z": "dddc648e84081f1d",
+        "name": "Exhaust Zone 6",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "1",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 130,
+        "y": 320,
+        "wires": [
+            [
+                "e999f1c33d62bdfd"
+            ]
+        ]
+    },
+    {
+        "id": "e999f1c33d62bdfd",
+        "type": "16inpind",
+        "z": "dddc648e84081f1d",
+        "name": "Exhaust_Demand_6",
+        "stack": "1",
+        "channel": "6",
+        "x": 320,
+        "y": 320,
+        "wires": [
+            [
+                "fc8e984b9f7339cb"
+            ]
+        ]
+    },
+    {
+        "id": "fc8e984b9f7339cb",
+        "type": "function",
+        "z": "dddc648e84081f1d",
+        "name": "If On",
+        "func": "if (msg.payload == 1) {\n    return { payload: true };\n} else {\n    return { payload: false };\n}",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 470,
+        "y": 320,
+        "wires": [
+            [
+                "26ac87541e6b72a7"
+            ]
+        ]
+    },
+    {
+        "id": "905e06060f81420e",
+        "type": "16relind",
+        "z": "dddc648e84081f1d",
+        "name": "ZRT2-6",
+        "stack": "0",
+        "relay": "6",
+        "payload": "payload",
+        "payloadType": "msg",
+        "x": 880,
+        "y": 320,
+        "wires": [
+            [
+                "e0d8b423ec87d7f0"
+            ]
+        ]
+    },
+    {
+        "id": "a2942eb5b7b24f3e",
+        "type": "countdown",
+        "z": "dddc648e84081f1d",
+        "name": "",
+        "topic": "",
+        "payloadTimerStart": "true",
+        "payloadTimerStartType": "bool",
+        "payloadTimerStop": "false",
+        "payloadTimerStopType": "bool",
+        "timer": "300",
+        "resetWhileRunning": true,
+        "outputOnReset": false,
+        "setTimeToNewWhileRunning": true,
+        "startCountdownOnControlMessage": true,
+        "x": 730,
+        "y": 320,
+        "wires": [
+            [
+                "905e06060f81420e"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "26ac87541e6b72a7",
+        "type": "switch",
+        "z": "dddc648e84081f1d",
+        "name": "Drop False",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "true"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 590,
+        "y": 320,
+        "wires": [
+            [
+                "a2942eb5b7b24f3e"
+            ]
+        ]
+    },
+    {
+        "id": "f45a7fe59035626f",
+        "type": "debug",
+        "z": "dddc648e84081f1d",
+        "name": "ZRT_6 Damper",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1300,
+        "y": 320,
+        "wires": []
+    },
+    {
+        "id": "83e0434c534789ef",
+        "type": "function",
+        "z": "dddc648e84081f1d",
+        "name": "Debug Messages",
+        "func": "var payload = msg.payload;\n\nif (payload === true) {\n    msg.payload = \"Exhaust Zone 6 ZRT Damper Opening\";\n}\nelse {\n    msg.payload = \"Exhaust Zone 6 ZRT Damper Closing\";\n}\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1130,
+        "y": 320,
+        "wires": [
+            [
+                "f45a7fe59035626f"
+            ]
+        ]
+    },
+    {
+        "id": "e0d8b423ec87d7f0",
+        "type": "rbe",
+        "z": "dddc648e84081f1d",
+        "name": "",
+        "func": "rbe",
+        "gap": "",
+        "start": "",
+        "inout": "out",
+        "septopics": true,
+        "property": "payload",
+        "topi": "topic",
+        "x": 990,
+        "y": 320,
+        "wires": [
+            [
+                "83e0434c534789ef"
+            ]
+        ]
+    },
+    {
+        "id": "107da7b7a0eb1e1a",
+        "type": "inject",
+        "z": "dddc648e84081f1d",
+        "name": "Exhaust Zone 7",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "1",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 130,
+        "y": 380,
+        "wires": [
+            [
+                "9ed1a2b39943f247"
+            ]
+        ]
+    },
+    {
+        "id": "9ed1a2b39943f247",
+        "type": "16inpind",
+        "z": "dddc648e84081f1d",
+        "name": "Exhaust_Demand_7",
+        "stack": "1",
+        "channel": "7",
+        "x": 320,
+        "y": 380,
+        "wires": [
+            [
+                "126bd459d6a1d3e2"
+            ]
+        ]
+    },
+    {
+        "id": "126bd459d6a1d3e2",
+        "type": "function",
+        "z": "dddc648e84081f1d",
+        "name": "If On",
+        "func": "if (msg.payload == 1) {\n    return { payload: true };\n} else {\n    return { payload: false };\n}",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 470,
+        "y": 380,
+        "wires": [
+            [
+                "901fde3424b9bfcc"
+            ]
+        ]
+    },
+    {
+        "id": "705bf3f52f9e83cc",
+        "type": "16relind",
+        "z": "dddc648e84081f1d",
+        "name": "ZRT2-7",
+        "stack": "0",
+        "relay": "7",
+        "payload": "payload",
+        "payloadType": "msg",
+        "x": 880,
+        "y": 380,
+        "wires": [
+            [
+                "d942635d4831fe24"
+            ]
+        ]
+    },
+    {
+        "id": "a87e17a9d9feb351",
+        "type": "countdown",
+        "z": "dddc648e84081f1d",
+        "name": "",
+        "topic": "",
+        "payloadTimerStart": "true",
+        "payloadTimerStartType": "bool",
+        "payloadTimerStop": "false",
+        "payloadTimerStopType": "bool",
+        "timer": "300",
+        "resetWhileRunning": true,
+        "outputOnReset": false,
+        "setTimeToNewWhileRunning": true,
+        "startCountdownOnControlMessage": true,
+        "x": 730,
+        "y": 380,
+        "wires": [
+            [
+                "705bf3f52f9e83cc"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "901fde3424b9bfcc",
+        "type": "switch",
+        "z": "dddc648e84081f1d",
+        "name": "Drop False",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "true"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 590,
+        "y": 380,
+        "wires": [
+            [
+                "a87e17a9d9feb351"
+            ]
+        ]
+    },
+    {
+        "id": "eac23b5e7a4dc7ea",
+        "type": "debug",
+        "z": "dddc648e84081f1d",
+        "name": "ZRT_7 Damper",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1300,
+        "y": 380,
+        "wires": []
+    },
+    {
+        "id": "8f8472c58eb95867",
+        "type": "function",
+        "z": "dddc648e84081f1d",
+        "name": "Debug Messages",
+        "func": "var payload = msg.payload;\n\nif (payload === true) {\n    msg.payload = \"Exhaust Zone 7 ZRT Damper Opening\";\n}\nelse {\n    msg.payload = \"Exhaust Zone 7 ZRT Damper Closing\";\n}\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1130,
+        "y": 380,
+        "wires": [
+            [
+                "eac23b5e7a4dc7ea"
+            ]
+        ]
+    },
+    {
+        "id": "d942635d4831fe24",
+        "type": "rbe",
+        "z": "dddc648e84081f1d",
+        "name": "",
+        "func": "rbe",
+        "gap": "",
+        "start": "",
+        "inout": "out",
+        "septopics": true,
+        "property": "payload",
+        "topi": "topic",
+        "x": 990,
+        "y": 380,
+        "wires": [
+            [
+                "8f8472c58eb95867"
+            ]
+        ]
+    },
+    {
+        "id": "d0cb669a2ca1d9be",
+        "type": "inject",
+        "z": "dddc648e84081f1d",
+        "name": "Exhaust Zone 8",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "1",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 130,
+        "y": 440,
+        "wires": [
+            [
+                "e5d93d48ae4d751b"
+            ]
+        ]
+    },
+    {
+        "id": "e5d93d48ae4d751b",
+        "type": "16inpind",
+        "z": "dddc648e84081f1d",
+        "name": "Exhaust_Demand_8",
+        "stack": "1",
+        "channel": "8",
+        "x": 320,
+        "y": 440,
+        "wires": [
+            [
+                "0ae4e9a3c7881604"
+            ]
+        ]
+    },
+    {
+        "id": "0ae4e9a3c7881604",
+        "type": "function",
+        "z": "dddc648e84081f1d",
+        "name": "If On",
+        "func": "if (msg.payload == 1) {\n    return { payload: true };\n} else {\n    return { payload: false };\n}",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 470,
+        "y": 440,
+        "wires": [
+            [
+                "9e6cb1c47ea235d3"
+            ]
+        ]
+    },
+    {
+        "id": "33d85a7b5331d6f8",
+        "type": "16relind",
+        "z": "dddc648e84081f1d",
+        "name": "ZRT2-8",
+        "stack": "0",
+        "relay": "8",
+        "payload": "payload",
+        "payloadType": "msg",
+        "x": 880,
+        "y": 440,
+        "wires": [
+            [
+                "5d10867c4b1dbeb1"
+            ]
+        ]
+    },
+    {
+        "id": "4ef237f1a13ebbef",
+        "type": "countdown",
+        "z": "dddc648e84081f1d",
+        "name": "",
+        "topic": "",
+        "payloadTimerStart": "true",
+        "payloadTimerStartType": "bool",
+        "payloadTimerStop": "false",
+        "payloadTimerStopType": "bool",
+        "timer": "300",
+        "resetWhileRunning": true,
+        "outputOnReset": false,
+        "setTimeToNewWhileRunning": true,
+        "startCountdownOnControlMessage": true,
+        "x": 730,
+        "y": 440,
+        "wires": [
+            [
+                "33d85a7b5331d6f8"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "9e6cb1c47ea235d3",
+        "type": "switch",
+        "z": "dddc648e84081f1d",
+        "name": "Drop False",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "true"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 590,
+        "y": 440,
+        "wires": [
+            [
+                "4ef237f1a13ebbef"
+            ]
+        ]
+    },
+    {
+        "id": "582a7169a9ddd991",
+        "type": "debug",
+        "z": "dddc648e84081f1d",
+        "name": "ZRT_8 Damper",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1300,
+        "y": 440,
+        "wires": []
+    },
+    {
+        "id": "6af8e4595f5789d5",
+        "type": "function",
+        "z": "dddc648e84081f1d",
+        "name": "Debug Messages",
+        "func": "var payload = msg.payload;\n\nif (payload === true) {\n    msg.payload = \"Exhaust Zone 8 ZRT Damper Opening\";\n}\nelse {\n    msg.payload = \"Exhaust Zone 8 ZRT Damper Closing\";\n}\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1130,
+        "y": 440,
+        "wires": [
+            [
+                "582a7169a9ddd991"
+            ]
+        ]
+    },
+    {
+        "id": "5d10867c4b1dbeb1",
+        "type": "rbe",
+        "z": "dddc648e84081f1d",
+        "name": "",
+        "func": "rbe",
+        "gap": "",
+        "start": "",
+        "inout": "out",
+        "septopics": true,
+        "property": "payload",
+        "topi": "topic",
+        "x": 990,
+        "y": 440,
+        "wires": [
+            [
+                "6af8e4595f5789d5"
+            ]
+        ]
+    },
+    {
+        "id": "c91f1e2515df1b81",
+        "type": "inject",
+        "z": "dddc648e84081f1d",
+        "name": "Exhaust All Zones",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "1",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 130,
+        "y": 500,
+        "wires": [
+            [
+                "e006eba5541b710c"
+            ]
+        ]
+    },
+    {
+        "id": "e006eba5541b710c",
+        "type": "16inpind",
+        "z": "dddc648e84081f1d",
+        "name": "Exhaust_Demand_All",
+        "stack": "1",
+        "channel": "9",
+        "x": 320,
+        "y": 500,
+        "wires": [
+            [
+                "fcc0c80d9c3099ce"
+            ]
+        ]
+    },
+    {
+        "id": "fcc0c80d9c3099ce",
+        "type": "function",
+        "z": "dddc648e84081f1d",
+        "name": "If On",
+        "func": "if (msg.payload == 1) {\n    return { payload: true };\n} else {\n    return { payload: false };\n}",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 470,
+        "y": 500,
+        "wires": [
+            [
+                "b7f510f8b4c64e3f"
+            ]
+        ]
+    },
+    {
+        "id": "721b63a5587f1ed9",
+        "type": "16relind",
+        "z": "dddc648e84081f1d",
+        "name": "ZRT2-8",
+        "stack": "0",
+        "relay": "8",
+        "payload": "payload",
+        "payloadType": "msg",
+        "x": 1360,
+        "y": 560,
+        "wires": [
+            [
+                "47a1c199354852bc"
+            ]
+        ]
+    },
+    {
+        "id": "ce0efe5d0815953c",
+        "type": "countdown",
+        "z": "dddc648e84081f1d",
+        "name": "",
+        "topic": "",
+        "payloadTimerStart": "true",
+        "payloadTimerStartType": "bool",
+        "payloadTimerStop": "false",
+        "payloadTimerStopType": "bool",
+        "timer": "300",
+        "resetWhileRunning": true,
+        "outputOnReset": false,
+        "setTimeToNewWhileRunning": true,
+        "startCountdownOnControlMessage": true,
+        "x": 730,
+        "y": 500,
+        "wires": [
+            [
+                "48d6efa399c27796"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "b7f510f8b4c64e3f",
+        "type": "switch",
+        "z": "dddc648e84081f1d",
+        "name": "Drop False",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "true"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 590,
+        "y": 500,
+        "wires": [
+            [
+                "ce0efe5d0815953c"
+            ]
+        ]
+    },
+    {
+        "id": "d51c406281616c1e",
+        "type": "debug",
+        "z": "dddc648e84081f1d",
+        "name": "ZRT_All Dampers",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1310,
+        "y": 500,
+        "wires": []
+    },
+    {
+        "id": "3a782ae244af4c01",
+        "type": "function",
+        "z": "dddc648e84081f1d",
+        "name": "Debug Messages",
+        "func": "var payload = msg.payload;\n\nif (payload === true) {\n    msg.payload = \"All ZRT Exhaust Zone Dampers Opening\";\n}\nelse {\n    msg.payload = \"All ZRT Exhaust Zone Dampers Closing\";\n}\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1130,
+        "y": 500,
+        "wires": [
+            [
+                "d51c406281616c1e"
+            ]
+        ]
+    },
+    {
+        "id": "47a1c199354852bc",
+        "type": "rbe",
+        "z": "dddc648e84081f1d",
+        "name": "",
+        "func": "rbe",
+        "gap": "",
+        "start": "",
+        "inout": "out",
+        "septopics": true,
+        "property": "payload",
+        "topi": "topic",
+        "x": 990,
+        "y": 500,
+        "wires": [
+            [
+                "3a782ae244af4c01"
+            ]
+        ]
+    },
+    {
+        "id": "48d6efa399c27796",
+        "type": "16relind",
+        "z": "dddc648e84081f1d",
+        "name": "ZRT2-1",
+        "stack": "0",
+        "relay": "1",
+        "payload": "payload",
+        "payloadType": "msg",
+        "x": 100,
+        "y": 560,
+        "wires": [
+            [
+                "e3088a0fccecd1c4"
+            ]
+        ]
+    },
+    {
+        "id": "e3088a0fccecd1c4",
+        "type": "16relind",
+        "z": "dddc648e84081f1d",
+        "name": "ZRT2-2",
+        "stack": "0",
+        "relay": "2",
+        "payload": "payload",
+        "payloadType": "msg",
+        "x": 220,
+        "y": 560,
+        "wires": [
+            [
+                "5e132a39fbd170ab"
+            ]
+        ]
+    },
+    {
+        "id": "3a3709ac6121f6be",
+        "type": "16relind",
+        "z": "dddc648e84081f1d",
+        "name": "ZRT2-3",
+        "stack": "0",
+        "relay": "3",
+        "payload": "payload",
+        "payloadType": "msg",
+        "x": 480,
+        "y": 560,
+        "wires": [
+            [
+                "a6bafd5f65b9b316"
+            ]
+        ]
+    },
+    {
+        "id": "a6bafd5f65b9b316",
+        "type": "16relind",
+        "z": "dddc648e84081f1d",
+        "name": "ZRT2-4",
+        "stack": "0",
+        "relay": "4",
+        "payload": "payload",
+        "payloadType": "msg",
+        "x": 600,
+        "y": 560,
+        "wires": [
+            [
+                "9053bef1ac113371"
+            ]
+        ]
+    },
+    {
+        "id": "a12d293c5f374f86",
+        "type": "16relind",
+        "z": "dddc648e84081f1d",
+        "name": "ZRT2-5",
+        "stack": "0",
+        "relay": "5",
+        "payload": "payload",
+        "payloadType": "msg",
+        "x": 860,
+        "y": 560,
+        "wires": [
+            [
+                "4bb52b60767ae026"
+            ]
+        ]
+    },
+    {
+        "id": "4bb52b60767ae026",
+        "type": "16relind",
+        "z": "dddc648e84081f1d",
+        "name": "ZRT2-6",
+        "stack": "0",
+        "relay": "6",
+        "payload": "payload",
+        "payloadType": "msg",
+        "x": 980,
+        "y": 560,
+        "wires": [
+            [
+                "48a8bf92086f534d"
+            ]
+        ]
+    },
+    {
+        "id": "8cc1a07393e3bd48",
+        "type": "16relind",
+        "z": "dddc648e84081f1d",
+        "name": "ZRT2-7",
+        "stack": "0",
+        "relay": "7",
+        "payload": "payload",
+        "payloadType": "msg",
+        "x": 1240,
+        "y": 560,
+        "wires": [
+            [
+                "721b63a5587f1ed9"
+            ]
+        ]
+    },
+    {
+        "id": "062c64c0ed017ea9",
+        "type": "delay",
+        "z": "dddc648e84081f1d",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "3",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 480,
+        "y": 1640,
+        "wires": [
+            [
+                "e725794970d82ef8"
+            ]
+        ]
+    },
+    {
+        "id": "6c17825755d4bf81",
+        "type": "debug",
+        "z": "dddc648e84081f1d",
+        "name": "Dehum Demand",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1180,
+        "y": 1100,
+        "wires": []
+    },
+    {
+        "id": "0698c2bd3c447161",
+        "type": "rbe",
+        "z": "dddc648e84081f1d",
+        "name": "",
+        "func": "rbe",
+        "gap": "",
+        "start": "",
+        "inout": "out",
+        "septopics": true,
+        "property": "payload",
+        "topi": "topic",
+        "x": 870,
+        "y": 1100,
+        "wires": [
+            [
+                "1a96beaea78dee01"
+            ]
+        ]
+    },
+    {
+        "id": "1a96beaea78dee01",
+        "type": "function",
+        "z": "dddc648e84081f1d",
+        "name": "Debug Messages",
+        "func": "var Payload = msg.payload;\n\nif (Payload === true) {\n    msg.payload =\"Dehumidification Demand Initiated\";\n}\nelse {\n    msg.payload = \"Dehumidification Demand Terminated\";\n}\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1010,
+        "y": 1100,
+        "wires": [
+            [
+                "6c17825755d4bf81"
+            ]
+        ]
+    },
+    {
+        "id": "c0128fcd7149e671",
+        "type": "delay",
+        "z": "dddc648e84081f1d",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "3",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 440,
+        "y": 1520,
+        "wires": [
+            [
+                "9733148d923a5d6d"
+            ]
+        ]
+    },
+    {
+        "id": "499bd67d30ed4d2e",
+        "type": "delay",
+        "z": "dddc648e84081f1d",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "3",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 480,
+        "y": 1580,
+        "wires": [
+            [
+                "fc0b560fb4321d2c"
+            ]
+        ]
+    },
+    {
+        "id": "5e132a39fbd170ab",
+        "type": "delay",
+        "z": "dddc648e84081f1d",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "200",
+        "timeoutUnits": "milliseconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 350,
+        "y": 560,
+        "wires": [
+            [
+                "3a3709ac6121f6be"
+            ]
+        ]
+    },
+    {
+        "id": "9053bef1ac113371",
+        "type": "delay",
+        "z": "dddc648e84081f1d",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "200",
+        "timeoutUnits": "milliseconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 730,
+        "y": 560,
+        "wires": [
+            [
+                "a12d293c5f374f86"
+            ]
+        ]
+    },
+    {
+        "id": "48a8bf92086f534d",
+        "type": "delay",
+        "z": "dddc648e84081f1d",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "200",
+        "timeoutUnits": "milliseconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 1110,
+        "y": 560,
+        "wires": [
+            [
+                "8cc1a07393e3bd48"
+            ]
+        ]
+    },
+    {
+        "id": "8e411f582544cf97",
+        "type": "function",
+        "z": "dddc648e84081f1d",
+        "name": "Debug Messages",
+        "func": "var Payload = msg.payload;\n\nif (Payload === true) {\n    msg.payload = \"Vent Relay On\";\n}\nelse {\n    msg.payload = \"Vent Relay Off\";\n}\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 950,
+        "y": 1520,
+        "wires": [
+            [
+                "76e328362367c4ef"
+            ]
+        ]
+    },
+    {
+        "id": "76e328362367c4ef",
+        "type": "debug",
+        "z": "dddc648e84081f1d",
+        "name": "Ventilation Relay",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1130,
+        "y": 1520,
+        "wires": []
+    },
+    {
+        "id": "3a3753d259cd7b7f",
+        "type": "debug",
+        "z": "dddc648e84081f1d",
+        "name": "damperconfig",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 500,
+        "y": 2200,
+        "wires": []
+    },
+    {
+        "id": "1354c0af44ca4258",
+        "type": "debug",
+        "z": "dddc648e84081f1d",
+        "name": "debug 1",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 900,
+        "y": 2120,
+        "wires": []
+    },
+    {
+        "id": "ef8f14becdefc4c2",
+        "type": "debug",
+        "z": "dddc648e84081f1d",
+        "name": "debug 2",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 920,
+        "y": 2160,
+        "wires": []
+    },
+    {
+        "id": "a06d768595492d9a",
+        "type": "debug",
+        "z": "dddc648e84081f1d",
+        "name": "debug 3",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 940,
+        "y": 2200,
+        "wires": []
+    },
+    {
+        "id": "1a467f869878f5d2",
+        "type": "debug",
+        "z": "dddc648e84081f1d",
+        "name": "debug 4",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 960,
+        "y": 2240,
+        "wires": []
+    },
+    {
+        "id": "f4eeedcae0fdfdad",
+        "type": "rbe",
+        "z": "dddc648e84081f1d",
+        "name": "",
+        "func": "rbe",
+        "gap": "",
+        "start": "",
+        "inout": "out",
+        "septopics": true,
+        "property": "payload",
+        "topi": "topic",
+        "x": 1130,
+        "y": 1840,
+        "wires": [
+            [
+                "97d411aec0fb2ae7"
+            ]
+        ]
+    },
+    {
+        "id": "f46f813b4c706673",
+        "type": "rbe",
+        "z": "dddc648e84081f1d",
+        "name": "",
+        "func": "rbe",
+        "gap": "",
+        "start": "",
+        "inout": "out",
+        "septopics": true,
+        "property": "payload",
+        "topi": "topic",
+        "x": 1110,
+        "y": 1880,
+        "wires": [
+            [
+                "46fda46cba84c28b"
+            ]
+        ]
+    },
+    {
+        "id": "e4d8d62d7175b76f",
+        "type": "rbe",
+        "z": "dddc648e84081f1d",
+        "name": "",
+        "func": "rbe",
+        "gap": "",
+        "start": "",
+        "inout": "out",
+        "septopics": true,
+        "property": "payload",
+        "topi": "topic",
+        "x": 1150,
+        "y": 1920,
+        "wires": [
+            [
+                "bf7398dfd7463856"
+            ]
+        ]
+    },
+    {
+        "id": "c3a6452a52a88d47",
+        "type": "inject",
+        "z": "dddc648e84081f1d",
+        "name": "Vent On Time",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "1",
+        "crontab": "",
+        "once": true,
+        "onceDelay": ".1",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 120,
+        "y": 1200,
+        "wires": [
+            [
+                "38bba03788d8675e"
+            ]
+        ]
+    },
+    {
+        "id": "38bba03788d8675e",
+        "type": "16relindrd",
+        "z": "dddc648e84081f1d",
+        "name": "",
+        "stack": "0",
+        "relay": "11",
+        "payload": "payload",
+        "payloadType": "msg",
+        "x": 260,
+        "y": 1200,
+        "wires": [
+            [
+                "01a1ec577f263e38"
+            ]
+        ]
+    },
+    {
+        "id": "ddd1f9ea52c1874a",
+        "type": "debug",
+        "z": "dddc648e84081f1d",
+        "name": "erv relay state",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1080,
+        "y": 1160,
+        "wires": []
+    },
+    {
+        "id": "44e21a8c354ca792",
+        "type": "debug",
+        "z": "dddc648e84081f1d",
+        "name": "ventaccumruntime",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1090,
+        "y": 1200,
+        "wires": []
+    },
+    {
+        "id": "01a1ec577f263e38",
+        "type": "function",
+        "z": "dddc648e84081f1d",
+        "name": "set MinVentSec, VentPeriod, VentAccumRunTime, VentOnTime, TimeVentDemand",
+        "func": "var MinVentMin = flow.get('MinVentMin') // sets minimum ventilation in minutes per hour\nvar MinVentSec = MinVentMin * 60;\nvar VentART = flow.get('VentAccumRunTime');\nvar VentPeriod = flow.get('VentPeriod');\nvar VentOnTime = flow.get('VentOnTime');\nvar ExhaustDemand = flow.get('ExhaustDemand');\nvar DCVDemand = flow.get('DCVDemand');\nvar TimeVentDemand = flow.get('TimeVentDemand');\nvar Startup = flow.get('Startup');\nvar msg1 = { payload: msg.payload }; //debug: ERV Relay State\nvar msg2 = { payload: VentART }; //debug: ERV runtime accumulated in current one-hour period (in seconds)\nvar msg3 = { payload: VentPeriod }; //debug: time remaining in current one-hour period\nvar msg4 = { payload: TimeVentDemand }; //debug:TimeVentDemand variable\nvar msg5 = { payload: null }; //debug: sends string msg when ventperiod & accumruntime are reset\n\n// count down to end of each one-hour ventperiod\nVentPeriod--;\nflow.set('VentPeriod', VentPeriod);\n\n// when ERV relay is on, add 1 to accum run time per second\nvar VentART = VentART + msg.payload;\nflow.set('VentAccumRunTime', VentART);\n\n// set VentOnTime to true when ERV accumulated runtime is less than minimum vent time per hour, and time remaining in one-hour\n// period is equal to or less than min vent time. ERV Relay watches VentOnTime and turns on/stays on while VentOnTime is true.\n// However, VentOnTime doesn't toll the runtime clock for time-controlled ventilation demand. TimeVentDemand does that.\nif (VentPeriod <= (MinVentSec - VentART)) {\n    VentOnTime = true;\n} \nelse { \n    VentOnTime = false;\n}\nflow.set('VentOnTime', VentOnTime);\n\n//reset VentPeriod to one hour if zero, simultaneously reset VentAccumRunTime to zero\nif (VentPeriod === 0) {\n    VentART = 0;\n    VentPeriod = 3600;\n    flow.set('VentAccumRunTime', VentART);\n    flow.set('VentPeriod', VentPeriod);\n    msg5 = { payload: 'VentPeriod variable reset to ' + VentPeriod + ', VentAccumRunTime variable reset to ' + VentART }; //debug\n}\n\n//set TimeVentDemand variable which \nif (VentOnTime === true && DCVDemand === false && ExhaustDemand === false) {\n    TimeVentDemand = true;\n}\nelse {\n    TimeVentDemand = false;\n}\nflow.set('TimeVentDemand', TimeVentDemand);\n\n//if (Startup = true) {\n//    Startup = false\n//    return [msg1, msg2, msg3, null, msg5];\n//}\n//else {\n//return [msg1, msg2, msg3, msg4, msg5];\n//}\nreturn [msg1, msg2, msg3, msg4, msg5]",
+        "outputs": 5,
+        "noerr": 0,
+        "initialize": "// Code added here will be run once\n// whenever the node is started.\nvar VentART = 0;\nvar VentPeriod = 3600;\n\nflow.set('VentAccumRunTime', VentART);\nflow.set('VentPeriod', VentPeriod);\n\nflow.set('VentOnTime', false);\nflow.set('TimeVentDemand', false);\n\nflow.set('Startup',true);",
+        "finalize": "",
+        "libs": [],
+        "x": 610,
+        "y": 1200,
+        "wires": [
+            [
+                "ddd1f9ea52c1874a"
+            ],
+            [
+                "44e21a8c354ca792"
+            ],
+            [
+                "0591afcb7beac24a"
+            ],
+            [
+                "0cdc15a7d6cefe5e"
+            ],
+            [
+                "89c6fbc0f899ce07"
+            ]
+        ]
+    },
+    {
+        "id": "0591afcb7beac24a",
+        "type": "debug",
+        "z": "dddc648e84081f1d",
+        "name": "ventperiod time remaining",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1110,
+        "y": 1240,
+        "wires": []
+    },
+    {
+        "id": "3262a7fd61475bba",
+        "type": "debug",
+        "z": "dddc648e84081f1d",
+        "name": "TimeVent Demand",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1370,
+        "y": 1280,
+        "wires": []
+    },
+    {
+        "id": "0cdc15a7d6cefe5e",
+        "type": "rbe",
+        "z": "dddc648e84081f1d",
+        "name": "",
+        "func": "rbe",
+        "gap": "",
+        "start": "",
+        "inout": "out",
+        "septopics": true,
+        "property": "payload",
+        "topi": "topic",
+        "x": 1050,
+        "y": 1280,
+        "wires": [
+            [
+                "0af86a615ccba84c"
+            ]
+        ]
+    },
+    {
+        "id": "0af86a615ccba84c",
+        "type": "function",
+        "z": "dddc648e84081f1d",
+        "name": "Debug Messages",
+        "func": "var Payload = msg.payload;\n\nif (Payload === true) {\n    msg.payload = \"TimeVent Demand Initiated\";\n}\nif (Payload === false) {\n    msg.payload = \"TimeVent Demand Terminated\";\n}\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1190,
+        "y": 1280,
+        "wires": [
+            [
+                "3262a7fd61475bba"
+            ]
+        ]
+    },
+    {
+        "id": "b83e7daad8e037cb",
+        "type": "debug",
+        "z": "dddc648e84081f1d",
+        "name": "VentPeriod & VentAccumRunTime reset",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1300,
+        "y": 1340,
+        "wires": []
+    },
+    {
+        "id": "89c6fbc0f899ce07",
+        "type": "switch",
+        "z": "dddc648e84081f1d",
+        "name": "Drop null",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "nnull"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 1060,
+        "y": 1340,
+        "wires": [
+            [
+                "b83e7daad8e037cb"
+            ]
+        ]
+    },
+    {
+        "id": "0df6c8a409b62f43",
+        "type": "debug",
+        "z": "dddc648e84081f1d",
+        "name": "debug 6",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1440,
+        "y": 820,
+        "wires": []
+    },
+    {
+        "id": "c38577af400f62fa",
+        "type": "function",
+        "z": "dddc648e84081f1d",
+        "name": "function 1",
+        "func": "msg.payload = flow.get('ExhaustDemand')\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1220,
+        "y": 780,
+        "wires": [
+            [
+                "0df6c8a409b62f43"
+            ]
+        ]
+    },
+    {
+        "id": "06f2575da3312c66",
+        "type": "inject",
+        "z": "dddc648e84081f1d",
+        "d": true,
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 190,
+        "y": 1280,
+        "wires": [
+            [
+                "6e48bcab7e06debb"
+            ]
+        ]
+    },
+    {
+        "id": "6e48bcab7e06debb",
+        "type": "function",
+        "z": "dddc648e84081f1d",
+        "name": "set MinVentMin to 60",
+        "func": "flow.set('MinVentMin',60)\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 400,
+        "y": 1280,
+        "wires": [
+            [
+                "d4cc80aa618fe2f5"
+            ]
+        ]
+    },
+    {
+        "id": "d5931a9f7fffa0ec",
+        "type": "debug",
+        "z": "dddc648e84081f1d",
+        "name": "MinVentMin",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 750,
+        "y": 1280,
+        "wires": []
+    },
+    {
+        "id": "d4cc80aa618fe2f5",
+        "type": "function",
+        "z": "dddc648e84081f1d",
+        "name": "debug msg",
+        "func": "msg.payload = flow.get('MinVentMin')\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 590,
+        "y": 1280,
+        "wires": [
+            [
+                "d5931a9f7fffa0ec"
+            ]
+        ]
+    },
+    {
+        "id": "d123422c356a896e",
+        "type": "inject",
+        "z": "dddc648e84081f1d",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 190,
+        "y": 1340,
+        "wires": [
+            [
+                "f19831bf0c5c2e6d"
+            ]
+        ]
+    },
+    {
+        "id": "f19831bf0c5c2e6d",
+        "type": "function",
+        "z": "dddc648e84081f1d",
+        "name": "set MinVentMin to -1 min",
+        "func": "var MinVentMin = flow.get('MinVentMin')\nMinVentMin -=1\nflow.set('MinVentMin',MinVentMin)\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 410,
+        "y": 1340,
+        "wires": [
+            [
+                "008c4e1bdf90e32f"
+            ]
+        ]
+    },
+    {
+        "id": "1d13ea3430f5907d",
+        "type": "debug",
+        "z": "dddc648e84081f1d",
+        "name": "MinVentMin",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 770,
+        "y": 1340,
+        "wires": []
+    },
+    {
+        "id": "008c4e1bdf90e32f",
+        "type": "function",
+        "z": "dddc648e84081f1d",
+        "name": "debug msg",
+        "func": "msg.payload = flow.get('MinVentMin')\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 630,
+        "y": 1340,
+        "wires": [
+            [
+                "1d13ea3430f5907d"
+            ]
+        ]
+    },
+    {
+        "id": "2d9b3c6d2433c6fc",
+        "type": "debug",
+        "z": "dddc648e84081f1d",
+        "name": "debug 5",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 560,
+        "y": 1700,
+        "wires": []
+    },
+    {
+        "id": "4633a1c27e0ebdbe",
+        "type": "inject",
+        "z": "dddc648e84081f1d",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 190,
+        "y": 1400,
+        "wires": [
+            [
+                "edbbbb2113547738"
+            ]
+        ]
+    },
+    {
+        "id": "edbbbb2113547738",
+        "type": "function",
+        "z": "dddc648e84081f1d",
+        "name": "set MinVentMin to +1 min",
+        "func": "var MinVentMin = flow.get('MinVentMin')\nMinVentMin +=1\nflow.set('MinVentMin',MinVentMin)\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 410,
+        "y": 1400,
+        "wires": [
+            [
+                "17c7be2e8123c0df"
+            ]
+        ]
+    },
+    {
+        "id": "158ce2bd25153f02",
+        "type": "debug",
+        "z": "dddc648e84081f1d",
+        "name": "MinVentMin",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 770,
+        "y": 1400,
+        "wires": []
+    },
+    {
+        "id": "17c7be2e8123c0df",
+        "type": "function",
+        "z": "dddc648e84081f1d",
+        "name": "debug msg",
+        "func": "msg.payload = flow.get('MinVentMin')\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 630,
+        "y": 1400,
+        "wires": [
+            [
+                "158ce2bd25153f02"
+            ]
+        ]
+    },
+    {
+        "id": "b70cb9c1fcefc5ab",
+        "type": "16inpind",
+        "z": "dddc648e84081f1d",
+        "name": "Exhaust_Demand_4",
+        "stack": "1",
+        "channel": "4",
+        "x": 400,
+        "y": 780,
+        "wires": [
+            [
+                "c11a09f5c534efd8"
+            ]
+        ]
+    },
+    {
+        "id": "bde2476fcb412969",
+        "type": "16inpind",
+        "z": "dddc648e84081f1d",
+        "name": "Exhaust_Demand_5",
+        "stack": "1",
+        "channel": "5",
+        "x": 400,
+        "y": 820,
+        "wires": [
+            [
+                "c11a09f5c534efd8"
+            ]
+        ]
+    },
+    {
+        "id": "cee0e7bcc435fbb2",
+        "type": "16inpind",
+        "z": "dddc648e84081f1d",
+        "name": "Exhaust_Demand_6",
+        "stack": "1",
+        "channel": "6",
+        "x": 400,
+        "y": 860,
+        "wires": [
+            [
+                "c11a09f5c534efd8"
+            ]
+        ]
+    },
+    {
+        "id": "da14c26e44a78cab",
+        "type": "16inpind",
+        "z": "dddc648e84081f1d",
+        "name": "Exhaust_Demand_7",
+        "stack": "1",
+        "channel": "7",
+        "x": 400,
+        "y": 900,
+        "wires": [
+            [
+                "c11a09f5c534efd8"
+            ]
+        ]
+    },
+    {
+        "id": "bdae7e81e148bcca",
+        "type": "16inpind",
+        "z": "dddc648e84081f1d",
+        "name": "Exhaust_Demand_8",
+        "stack": "1",
+        "channel": "8",
+        "x": 400,
+        "y": 940,
+        "wires": [
+            [
+                "c11a09f5c534efd8"
+            ]
+        ]
+    },
+    {
+        "id": "8f35ae7d79828ae6",
+        "type": "16inpind",
+        "z": "dddc648e84081f1d",
+        "name": "Exhaust_Demand_1",
+        "stack": "1",
+        "channel": "1",
+        "x": 400,
+        "y": 660,
+        "wires": [
+            [
+                "c11a09f5c534efd8"
+            ]
+        ]
+    },
+    {
+        "id": "7fb4770195d39ae7",
+        "type": "16inpind",
+        "z": "dddc648e84081f1d",
+        "name": "Exhaust_Demand_3",
+        "stack": "1",
+        "channel": "3",
+        "x": 400,
+        "y": 740,
+        "wires": [
+            [
+                "c11a09f5c534efd8"
+            ]
+        ]
+    },
+    {
+        "id": "1ee6d8d3cd250ea2",
+        "type": "16inpind",
+        "z": "dddc648e84081f1d",
+        "name": "Exhaust_Demand_2",
+        "stack": "1",
+        "channel": "2",
+        "x": 400,
+        "y": 700,
+        "wires": [
+            [
+                "c11a09f5c534efd8"
+            ]
+        ]
+    }
+]
